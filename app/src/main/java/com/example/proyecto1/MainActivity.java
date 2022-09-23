@@ -1,6 +1,8 @@
 package com.example.proyecto1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn1=findViewById(R.id.btn1);
         etcedula=findViewById(R.id.etcedula);
        // etnombre=findViewById(R.id.etnombre);
-       // rbh=findViewById(R.id.rbh);
-       // rbm=findViewById(R.id.rbm);
+       //rbh=findViewById(R.id.rbh);
+       //rbm=findViewById(R.id.rbm);
 
         //Introduccion de cedulas en arreglo
         Data.cedula.add("08-0944-000327");
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         Data.nombre.add("MARC DUDLEY");
         Data.nombre.add("DIEGO FERNANDEZ");
         Data.nombre.add("MARÍA FLORES");
+
         Data.nombre.add("DONALDO FRAZER");
         Data.nombre.add("MIGUEL GASCÓN");
         Data.nombre.add("ANDREW GONZALEZ");
@@ -93,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         Data.nombre.add("LISSETH MCDONALD");
         Data.nombre.add("JESUS MONAGAS");
         Data.nombre.add("DIANA MORENO");
+
         Data.nombre.add("GERARDO MORENO");
         Data.nombre.add("JUAN NAVARRO");
         Data.nombre.add("JULIO NAVAS");
@@ -103,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         Data.nombre.add("DAVID RIOS");
         Data.nombre.add("SERGIO RODRIGUEZ");
         Data.nombre.add("ZULIXA SALAS");
+
         Data.nombre.add("LUIS SAMANIEGO");
         Data.nombre.add("ARY SÁNCHEZ");
         Data.nombre.add("DIONISIO SANTOS");
@@ -112,6 +118,51 @@ public class MainActivity extends AppCompatActivity {
         Data.nombre.add("FERNANDO ZENG");
         Data.nombre.add("CARLOS ZHONG");
         Data.nombre.add("EIMY GUERRA");
+
+        //Sexo en arreglo
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Hombre");
+        Data.sexo.add("Mujer");
+
 
         //Inicializacion de valida
         Data.valida.add(0);
@@ -167,14 +218,15 @@ public class MainActivity extends AppCompatActivity {
                     if (Data.cedula.contains(ced) /*&& Data.nombre.contains(nom)*/){
                         Data.posicion = Data.cedula.indexOf(ced);
 
-                      /*  if (rbh.isChecked()==true){
-                            Data.hombre+=1;
+                        /*if (rbh.isChecked()==true){
+                            Data.sexo.set(Data.posicion,"Hombre");
                         }
                         else if (rbm.isChecked()==true){
-                            Data.mujer+=1;
+                            Data.sexo.set(Data.posicion,"Mujer");
                         }*/
 
-                        Toast toast=Toast.makeText(getApplicationContext(),"Bienvenido al sistema, " + Data.nombre.get(Data.posicion),Toast.LENGTH_SHORT);
+                        //Toast toast=Toast.makeText(getApplicationContext(),"Bienvenido al sistema, " + Data.nombre.get(Data.posicion),Toast.LENGTH_SHORT);
+                        Toast toast=Toast.makeText(getApplicationContext(),Data.nombre.get(Data.posicion) + " Sexo: " + Data.sexo.get(Data.posicion),Toast.LENGTH_SHORT);
                         toast.show();
 
                         Intent opcion = new Intent(getApplicationContext(), opciones.class);

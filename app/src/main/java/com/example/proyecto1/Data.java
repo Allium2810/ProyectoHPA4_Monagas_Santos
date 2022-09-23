@@ -7,6 +7,7 @@ public class Data {
     public static ArrayList<String> cedula = new ArrayList<String>();
     public static ArrayList<String> nombre = new ArrayList<String>();
     public static ArrayList<Integer> valida = new ArrayList<Integer>();
+    public static ArrayList<String> sexo = new ArrayList<String>();
     public static int vivian = 0;
     public static int omar = 0;
     public static int martin = 0;
